@@ -1,0 +1,8 @@
+node_modules/
+deploy/out/
+dist/
+.wrangler/
+.dev.vars*
+.env*
+wrangler.jsonc
+test-results/

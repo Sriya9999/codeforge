@@ -1,0 +1,24 @@
+{
+  "name": "grading-console",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototype grading console: import marks, review data quality, configure grade ranges, export grades safely. Not an official BITS Pilani system.",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/core.test.mjs tests/e2e.test.mjs",
+    "test:unit": "node --test tests/core.test.mjs",
+    "fixtures": "node tests/make-fixtures.mjs",
+    "reproduce": "node tests/reproduce-original.mjs",
+    "build:worker": "node deploy/build-worker.mjs",
+    "deploy": "node deploy/build-worker.mjs && cd deploy/out && wrangler deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sriya9999/codeforge.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.56.1",
+    "wrangler": "^4.144.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}
