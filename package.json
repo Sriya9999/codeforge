@@ -9,7 +9,7 @@
     "fixtures": "node tests/make-fixtures.mjs",
     "reproduce": "node tests/reproduce-original.mjs",
     "build:worker": "node deploy/build-worker.mjs",
-    "deploy": "node deploy/build-worker.mjs && cd deploy/out && wrangler deploy"
+    "deploy": "bash deploy/deploy-pages.sh"
   },
   "repository": {
     "type": "git",

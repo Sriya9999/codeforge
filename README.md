@@ -1,6 +1,6 @@
 # Grading Console
 
-**Live:** https://grading-console.salmarinho.workers.dev
+**Live:** https://grading-console.pages.dev
 
 A prototype grading console, rebuilt from a buggy prototype as a debugging and product-design exercise.
 It is **not** an official BITS Pilani grading system. Marks files are processed entirely in the browser
@@ -78,10 +78,10 @@ npx http-server -p 8080 # then open http://localhost:8080
 ## Deploy
 
 ```bash
-npm run deploy          # builds deploy/out/worker.js and runs `wrangler deploy`
-BASE_URL=https://grading-console.salmarinho.workers.dev/ node --test tests/e2e.test.mjs
+npm run deploy          # builds deploy/out/worker.js and deploys it to Cloudflare Pages
+BASE_URL=https://grading-console.pages.dev/ node --test tests/e2e.test.mjs
 ```
 
 The site is a static page, so any static host works (`index.html`, `src/`, `vendor/`, `fixtures/sample-marks.xlsx`).
-It is deployed as a single Worker with the files inlined, plus a strict Content-Security-Policy
+It is deployed to Cloudflare Pages as a single `_worker.js` with the files inlined, plus a strict Content-Security-Policy
 (`script-src 'self'`).
